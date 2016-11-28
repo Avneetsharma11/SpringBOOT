@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jsonApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MyApps</title>
+<!-- <link href="resources/lib/bootstrap-3.1.1/css/bootstrap.min.css"
+	rel="stylesheet" /> -->
+<link href="resources/lib/bootstrap-3.1.1/css/bootstrap.min.css"
+	th:href="@{/resources/lib/bootstrap-3.1.1/css/bootstrap.min.css}"
+	rel="stylesheet" />
+
+</head>
+<body>
+
+
+	<div ng-controller="jsonAppController">
+
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-9">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Name</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-if="result.length == 0">
+								<td colspan="3">No record found...</td>
+							</tr>
+							<tr ng-repeat="item in result" ng-if="result.length > 0">
+								<td>{{$index+1}}</td>
+								<td>{{item.name}}</td>
+
+								<td><a ui-sref="ShowDetail({KeyName:item.id})">show
+										details. </a> <span> / </span> <a
+									ui-sref="EdidRecord({id:item.id})">Edit</a>
+								<span> / </span>
+								<a ng-click="deleteRecord(item.id)">Delete</a>
+								</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+					<a ui-sref="AddReco" ng-if="!$state.current.name"><button class="btn btn-info">Add
+							New</button></a>
+				</div>
+			</div>
+			<div ui-view="" class="ng-scope"></div>
+		</div>
+
+
+	</div>
+	<script src="resources/lib/jquery-1.10.2.min.js"
+		th:src="@{/resources/lib/jquery-1.10.2.min.js}"></script>
+	<script src="resources/lib/bootstrap-3.1.1/js/bootstrap.min.js"
+		th:src="@{/resources/lib/bootstrap-3.1.1/js/bootstrap.min.js}"></script>
+	<script src="resources/lib/angular.min.js"
+		th:src="@{/resources/lib/angular.min.js}"></script>
+	<script src="resources/lib/angular-ui-router.min.js"
+		th:src="@{/resources/lib/angular-ui-router.min.js}"></script>
+	<script src="resources/js/JsonDisplay.js"
+		th:src="@{/resources/js/JsonDisplay.js}"></script>
+	<script src="resources/js/services/JsonService.js"
+		th:src="@{/resources/js/services/JsonService.js}"></script>
+</body>
+</html>

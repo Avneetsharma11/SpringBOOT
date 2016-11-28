@@ -1,0 +1,25 @@
+
+
+	<div class="jumbotron ">
+	<span  class="btn btn-danger pull-right" ng-click="cancelForm()" >X</span>
+		<h1>View Detail</h1>
+		<br>
+		<br>
+
+		
+			
+			<table class="table table-striped table-hover table-bordered">
+						<thead >
+							<tr class="danger"><th colspan="2">
+								  <h3><strong>{{person.name}}'s Details </strong></h3>
+							</th></tr>
+						</thead>
+			<tbody>		
+		   <tr class="info"> <th> Name     </th><th>{{person.name}}	</th>  </tr>
+			<tr class="success"> <th>Address  </th><th> {{person.address}}</th>  </tr>
+			<tr class="info"> <th>Mobile   </th><th> {{person.mobile}} </th>  </tr>
+		   <tr class="success"> <th> Email_ID </th><th>{{person.mailID}}	</th>  </tr>
+		    </tbody>	
+			</table>
+	</div>
+

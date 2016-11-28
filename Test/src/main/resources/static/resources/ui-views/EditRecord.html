@@ -1,0 +1,15 @@
+<span  class="btn btn-danger pull-right" ng-click="cancelForm()" >X</span>
+<div class="jumbotron">
+  <form>
+    <label for="name">Name</label> 
+        <input type="text" class="form-control col-lg-7 col-md-7 col-sm-7 col-xs-7" name="name" ng-model="newRecord.name"/><br/>
+    <label for="email">Email</label> 
+        <input type="text" class="form-control col-sm-6" name="email" ng-model="newRecord.mailID"/><br/>
+    <label for="phone">Phone</label> 
+        <input type="text" class="form-control col-sm-6" name="phone" ng-model="newRecord.mobile"/><br/>
+    <label for="address">Address</label> 
+        <input type="text" class="form-control col-sm-6" name="address" id="address" ng-model="newRecord.address"/><br/>
+       
+     <br/><br/><br/><input type="button" class="btn btn-info" value="Save" ng-click="saveContact()" />
+    </form>
+</div>
